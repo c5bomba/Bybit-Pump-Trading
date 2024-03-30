@@ -4,8 +4,8 @@ api_hash = ""
 chat_id =  -1111111 #change this
 bybit_api_key = ""
 bybit_api_secret = ""
-default_leverage = 15  # Varsayılan kaldıraç
-default_margin = 15  # Varsayılan marjin
+default_leverage = 15  # leverage
+default_margin = 15  # margin
 time_in_force = 'GoodTillCancel'
 symbol_list =[ "10000000AIDOGEUSDT",																									
 "10000COQUSDT",																									
