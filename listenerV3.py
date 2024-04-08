@@ -90,7 +90,7 @@ channel_id = chat_id
 @client.on(events.NewMessage(chats=channel_id))
 async def my_event_handler(event):
     global balance, default_margin
-    # Mesajı al ve print et
+    # receive message and print
     message = event.message.message
     print(message)
     symbol = extract_symbol(message)
@@ -110,9 +110,9 @@ async def my_event_handler(event):
             symbol=symbol+"USDT"
             if symbol in symbol_list:
                 index = symbol_list.index(symbol)
-                print(f"{symbol} sembolü {index}. sırada.")
+                print(f"{index}th {symbol}.")
             else:
-                print("Sembol bulunamadı.")
+                print("Symbol not found.")
 
             try:
                 symbol_info = symbols_data['result'][index]
@@ -138,7 +138,7 @@ async def my_event_handler(event):
             print("BUY/OPEN")
             print(buy_order)
 
-            await asyncio.sleep(11)  # 11 saniye bekleme
+            await asyncio.sleep(11)  # 11 sec wait
 
             sell_order = session.place_order(
                 category="linear",
@@ -176,12 +176,12 @@ async def my_event_handler(event):
             
             print(f"Last price for {symbol}: {last_price}")
             symbol=symbol+"USDT"         
-             # Örnek bir değer
+            
             if symbol in symbol_list:
                 index = symbol_list.index(symbol)
-                print(f"{symbol} sembolü {index}. sırada.")
+                print(f"{index}th {symbol}.")
             else:
-                print("Sembol bulunamadı.")
+                print("Symbol not found")
             try:
                 symbol_info = symbols_data['result'][index]
                 print("Min Qty:", symbol_info['lot_size_filter']['min_trading_qty'])
